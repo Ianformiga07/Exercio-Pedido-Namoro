@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pedido de namoro. Aceita ou aceita.</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Poppins:200,400,600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --cor-primaria: #8B80F9;
+            --cor--secundaria: #414141;
+            --cor-primaria-escurecida: #726ace;
+            --cor-branca: #fff;
+            --cor-caixa: rgba(255, 255, 255, 0.5);
+            --cor-sombra-02: rgba(0, 0, 0, 0.2);
+            --cor-sombra-03: rgba(0, 0, 0, 0.3);
+            --cor-sombra-05: rgba(0, 0, 0, 0.5);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-image: url(./img/img1.jpg);
+            background-size: 100%;
+        }
+        
+        .painel{
+            border: 1px solid tan;
+            margin: auto;
+            text-align: center;
+            margin-top: 50px;
+            padding: 50px 0;
+            border-radius: 8px;
+            width: 500px;
+            height: 500px;
+            font-size: 10px;
+            background-color: white;
+        }
+
+        #btn{
+            padding-top: 30px;
+            margin-right: 80px;
+        }
+
+        #Sim{
+            
+            height: 40px;
+            width: 60px;
+            border: 2px solid white;
+            border-radius: 10px;
+            background-color: hotpink;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+        }
+        #Sim:hover{
+            background: rgba(255, 255, 255, 0.6);
+            border: 2px solid black;
+            
+        }
+        #Nao{
+            position: absolute;
+            height: 40px;
+            width: 60px;
+            border: 2px solid white;
+            border-radius: 10px; 
+            margin-left: 20px;           
+            background-color: hotpink;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+        }
+        #Nao:hover{
+            background-color: rgba(255, 255, 255, 0.0);
+            border: 2px solid black;
+        }
+    </style>
+</head>
+<body>
+    <div class="painel">
+        <h2>Olá Meu Amor, Laura Regina...</h2>
+
+        <img src="./img/urso.gif" alt="">
+
+        <h1>Aceita ser minha eterna NAMORADA?</h1>
+
+        <div id="btn">
+            <button onclick="sim()" id="Sim">Sim</button>
+            <button onmouseover="fuja()" id="Nao">Não</button>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        function fuja(){
+            var botaoNao = document.getElementById("Nao")
+
+            var largurajanela = window.innerWidth;
+            var alturajanela = window.innerHeight;
+
+            var maxX = largurajanela - botaoNao.offsetWidth;
+            var maxY = alturajanela - botaoNao.offsetHeight;
+
+            var aleatorioX = Math.floor(Math.random() * maxX);
+            var aleatorioY = Math.floor(Math.random() * maxY);
+
+            botaoNao.style.left = aleatorioX + "px";
+            botaoNao.style.top = aleatorioY + "px"
+        }
+
+
+        function sim(){
+            var sim = document.getElementById("Sim")
+            Swal.fire({
+            title: 'Obrigado Meu Amor 😍',
+            text: "Prometo lhe fazer Feliz Sempre. 💘",
+            imageUrl: "./img/22.jpg",
+            imageWidth: 300,
+            imageHeight: 400,
+            imageAlt: "Custom image"
+            }).then((value) => {
+            window.location = "https://www.youtube.com/watch?v=0mJMW2CzTiA"
+        });
+            ;
+        }
+
+    </script>
+</body>
+
+</html>
